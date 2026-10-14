@@ -1,0 +1,67 @@
+{
+  "ruleset_id": "gk-alpha-default",
+  "ruleset_version": 1,
+  "status": "selected_for_implementation",
+  "reference": {
+    "repository": "https://github.com/yumin0544/Alpha-Yoo-for-Great-Kingdom",
+    "commit": "0c6150e32293e437df6bf11fd4dcbc4c02f321f2"
+  },
+  "board": {
+    "rows": 9,
+    "columns": 9,
+    "coordinate_base": 0,
+    "index_order": "row_major",
+    "adjacency": "orthogonal",
+    "cell_codes": {
+      "empty": 0,
+      "black": 1,
+      "white": 2,
+      "neutral": 3
+    },
+    "neutral_positions": [[4, 4]],
+    "neutral_is_indestructible": true,
+    "first_player": "black"
+  },
+  "actions": {
+    "placement_encoding": "row * 9 + column",
+    "pass_id": 81,
+    "action_count": 82,
+    "resignation_encoding": "separate_status"
+  },
+  "rules": {
+    "stones_per_player": 41,
+    "allow_own_territory_moves": false,
+    "allow_opponent_territory_moves": false,
+    "suicide_rule": "accepted_loss",
+    "opponent_capture_precedes_suicide": true,
+    "capture_ends_game": true,
+    "remove_captured_stones": true,
+    "liberty_ownership_filter": false,
+    "territory": {
+      "neutral_is_wall": true,
+      "region_cell_types": ["empty", "opponent_stone"],
+      "requires_own_stone_boundary": true,
+      "reject_regions_containing_opponent_stones": true,
+      "allowed_board_edge_counts": [0, 1, 2, 3],
+      "ownership_is_permanent": true,
+      "update_after_nonterminal_placement_only": true,
+      "score": "owned_empty_cells_only"
+    },
+    "pass": {
+      "allowed_without_stones": true,
+      "consecutive_passes_to_end": 2,
+      "accepted_placement_resets_pass_count": true
+    },
+    "scoring": {
+      "black_minimum_territory_lead_to_win": 3,
+      "otherwise_winner": "white",
+      "draws": false
+    }
+  },
+  "transitions": {
+    "rejected_move_preserves_state": true,
+    "accepted_action_changes_turn_even_when_terminal": true,
+    "terminal_legal_mask_is_empty": true,
+    "terminal_actions_are_rejected": true
+  }
+}

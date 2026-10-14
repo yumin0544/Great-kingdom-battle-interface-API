@@ -37,6 +37,10 @@ Great Kingdom 게임 로봇 개발자들이 각자의 개발 결과물을 서로
 
 규격 후보와 권장 구조는 [GPU 배치 입출력 규격 후보](docs/io-spec-candidates.md)에 정리했습니다.
 
+모듈 구조, 구현 순서, 단계별 완료 기준은 [구현 단계 설계](docs/implementation-plan.md)를 참고하세요.
+
+첫 공통 판정 규칙은 **Alpha-Yoo 기본 규칙을 참조한 `gk-alpha-default`, 버전 1**로 선정했습니다. 세부 내용은 [규칙 명세](docs/rulesets/gk-alpha-default-v1.md), 설정 값은 [프로파일 JSON](configs/rulesets/gk-alpha-default-v1.json)을 참고하세요.
+
 ## 호환성을 검토할 프로젝트
 
 다음 결과물의 실제 인터페이스를 참고하여 AI 로봇, 대국 봇, 서버 등 서로 다른 역할에 맞는 연결 방식을 검토합니다.
